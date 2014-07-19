@@ -43,25 +43,26 @@ public class Item : MonoBehaviour
 
 	public SphereCollider AddCircleCollider(float radius, float offsetX, float offsetY)
 	{
-		var go = new GameObject("CircleColl");
-		go.transform.parent = gameObject.transform;
-		go.transform.localPosition = new Vector3(offsetX*FPhysics.POINTS_TO_METERS, offsetY*FPhysics.POINTS_TO_METERS,0);
+		//var go = new GameObject("CircleColl");
+		//go.transform.parent = gameObject.transform;
+		//go.transform.localPosition = new Vector3(offsetX*FPhysics.POINTS_TO_METERS, offsetY*FPhysics.POINTS_TO_METERS,0);
 
-		SphereCollider coll = go.AddComponent<SphereCollider>();
+		SphereCollider coll = gameObject.AddComponent<SphereCollider>();
 		coll.radius = radius * FPhysics.POINTS_TO_METERS;
+		coll.center = new Vector3(offsetX*FPhysics.POINTS_TO_METERS, offsetY*FPhysics.POINTS_TO_METERS,0);
 		return coll;
 	}
 
 	public BoxCollider AddBoxCollider(Rect rect, float angle)
 	{
-		var go = new GameObject("BoxColl");
-		go.transform.parent = gameObject.transform;
-		go.transform.localPosition = new Vector3(rect.center.x*FPhysics.POINTS_TO_METERS,rect.center.y*FPhysics.POINTS_TO_METERS,0);
-		go.transform.localEulerAngles = new Vector3(0,0,angle);
+		//var go = new GameObject("BoxColl");
+		//go.transform.parent = gameObject.transform;
+		//go.transform.localPosition = new Vector3(rect.center.x*FPhysics.POINTS_TO_METERS,rect.center.y*FPhysics.POINTS_TO_METERS,0);
+		//go.transform.localEulerAngles = new Vector3(0,0,angle);
 
-		var coll = go.AddComponent<BoxCollider>();
+		var coll = gameObject.AddComponent<BoxCollider>();
 		coll.size = new Vector3(rect.width*FPhysics.POINTS_TO_METERS, rect.height*FPhysics.POINTS_TO_METERS,FPhysics.DEFAULT_Z_THICKNESS);
-
+		coll.center = new Vector3(rect.center.x*FPhysics.POINTS_TO_METERS,rect.center.y*FPhysics.POINTS_TO_METERS,0);
 		return coll;
 	}
 

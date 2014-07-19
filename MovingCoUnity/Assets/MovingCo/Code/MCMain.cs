@@ -60,7 +60,8 @@ public class MCMain : MonoBehaviour
 		Vector2 dir = new Vector2(0,0);
 		dir.x = Input.acceleration.x;
 		dir.y = Input.acceleration.y;
-		Physics.gravity = dir * force;
+
+		//Physics.gravity = dir * force;
 	}
 
 	void OnApplicationQuit()
