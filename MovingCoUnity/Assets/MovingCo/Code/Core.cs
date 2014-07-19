@@ -11,6 +11,9 @@ public class Core : FContainer
 
 	public FSprite background;
 
+	public bool didWin = false;
+	public int score = 0;
+
 	public Core ()
 	{
 		instance = this;

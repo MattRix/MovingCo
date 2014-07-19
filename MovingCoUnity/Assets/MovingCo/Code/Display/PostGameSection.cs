@@ -15,7 +15,9 @@ public class PostGameSection : Section
 	
 	override public void Start()
 	{
-		AddChild(gameOverLabel = new FLabel(Fonts.Hand,"GAME OVER!"));
+		bool didWin = Core.instance.didWin;
+
+		AddChild(gameOverLabel = new FLabel(Fonts.Hand,didWin?"YOU WON!":"GAME OVER!"));
 		
 		playAgainButton = new FButton("UI/PlayAgainButton","UI/PlayAgainButton");
 		playAgainButton.SetColors(new Color(0.9f,0.9f,0.9f),Color.white);

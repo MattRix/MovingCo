@@ -22,6 +22,8 @@ public class House : FContainer
 
 	public Vector3 currentAccel;
 
+	public bool hasWon = false;
+
 	public House ()
 	{
 		instance = this;
@@ -43,6 +45,8 @@ public class House : FContainer
 		CreateItems();
 
 		ListenForUpdate(HandleUpdate);
+
+		Core.instance.didWin = false;
 	}
 
 	void HandleUpdate ()
@@ -85,6 +89,17 @@ public class House : FContainer
 				i--;
 			}
 		}
+
+		if(!hasWon && items.Count == 0)
+		{
+			DoWin();
+		}
+	}
+
+	void DoWin ()
+	{
+		Core.instance.didWin = true;
+		Core.instance.score = 0;
 	}
 
 	void CreateItems()
