@@ -1,19 +1,35 @@
 {"frames": {
 
+"MovingTruck":
+{
+	"frame": {"x":1,"y":1,"w":1993,"h":1078},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":11,"w":1993,"h":1078},
+	"sourceSize": {"w":2049,"h":1089}
+},
 "PaperBG":
 {
-	"frame": {"x":1,"y":1,"w":2048,"h":1536},
+	"frame": {"x":1995,"y":1,"w":2048,"h":1536},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":2048,"h":1536},
 	"sourceSize": {"w":2048,"h":1536}
+},
+"TruckSign":
+{
+	"frame": {"x":1,"y":1080,"w":923,"h":381},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":16,"w":923,"h":381},
+	"sourceSize": {"w":1000,"h":486}
 }},
 "meta":{
 	"app": "Packrat Atlas Generator github.com/MattRix/Packrat",
 	"version": "1.0",
 	"image": "Assets/MovingCo/Resources/Atlases/BackgroundAtlas.png",
 	"format": "RGBA8888",
-	"size": {"w":4096,"h":2048},
+	"size": {"w":4096,"h":4096},
 	"scale": "1"
 }
 }

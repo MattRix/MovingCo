@@ -1,19 +1,56 @@
 using System;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Core : FContainer
 {
+	public static Core instance;
+	
+	public Section currentSection = null;
+
+	public FSprite background;
 
 	public Core ()
 	{
-		var bg = new FSprite("PaperBG");
-		AddChild(bg);
+		instance = this;
 
-		var box = new FSprite("Box");
-		AddChild(box);
+		background = new FSprite("PaperBG");
+		AddChild(background);
+//
+//		var box = new FSprite("Box");
+//		AddChild(box);
+//
+//		var label = new FLabel(Fonts.Medium,"Hello World!");
+//		AddChild(label);
 
-		var label = new FLabel(Fonts.Medium,"Hello World!");
-		AddChild(label);
+		Futile.instance.StartDelayedCallback(Start,0.1f);
+	}
+
+	void Start ()
+	{
+		SetSection(new StartSection());
+		StartCurrentSection();
+	}
+
+	public void SetSection(Section section)
+	{
+		if(currentSection != null)
+		{
+			currentSection.BuildOut();
+			currentSection = null;
+		}
+
+		if(section != null)
+		{
+			currentSection = section;
+			AddChild(currentSection);
+		}
+	}
+
+	public void StartCurrentSection()
+	{
+		currentSection.Start();
 	}
 
 	void HandleUpdate ()

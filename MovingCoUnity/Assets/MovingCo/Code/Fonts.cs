@@ -4,10 +4,12 @@ using UnityEngine;
 public class Fonts
 {
 	public static string Medium = "DinCondBold_Medium";
+	public static string Hand = "DinCondHand";
 
 	public static void Load()
 	{
 		LoadFont(Medium, 0, 0, 0, 0);
+		LoadFont(Hand, 0, 0, 0, -1f);
 	}
 
 	public static void LoadFont(string fontName, float offsetX, float offsetY,float lineHeightOffset, float kerningOffset)

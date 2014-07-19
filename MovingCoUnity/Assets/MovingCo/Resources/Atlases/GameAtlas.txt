@@ -16,20 +16,84 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":8,"h":8},
 	"sourceSize": {"w":8,"h":8}
 },
+"HouseOutline":
+{
+	"frame": {"x":42,"y":1,"w":2048,"h":1536},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":2048,"h":1536},
+	"sourceSize": {"w":2048,"h":1536}
+},
 "Fonts/DinCondBold_Medium":
 {
-	"frame": {"x":1,"y":51,"w":1021,"h":489},
+	"frame": {"x":2091,"y":1,"w":1021,"h":489},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":2,"w":1021,"h":489},
 	"sourceSize": {"w":1024,"h":512}
+},
+"Fonts/DinCondHand":
+{
+	"frame": {"x":2091,"y":491,"w":1990,"h":642},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":0,"w":1990,"h":642},
+	"sourceSize": {"w":2048,"h":1024}
+},
+"UI/CloseButton":
+{
+	"frame": {"x":3113,"y":1,"w":213,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":213,"h":188},
+	"sourceSize": {"w":220,"h":189}
+},
+"UI/DollarSign":
+{
+	"frame": {"x":3327,"y":1,"w":154,"h":311},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":154,"h":311},
+	"sourceSize": {"w":162,"h":315}
+},
+"UI/MenuButton":
+{
+	"frame": {"x":3113,"y":190,"w":191,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":191,"h":188},
+	"sourceSize": {"w":197,"h":201}
+},
+"UI/PlayAgainButton":
+{
+	"frame": {"x":3482,"y":1,"w":436,"h":243},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":436,"h":243},
+	"sourceSize": {"w":437,"h":255}
+},
+"UI/RestartButton":
+{
+	"frame": {"x":3482,"y":245,"w":199,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":199,"h":196},
+	"sourceSize": {"w":209,"h":200}
+},
+"UI/StartButton":
+{
+	"frame": {"x":2091,"y":1134,"w":483,"h":244},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":483,"h":244},
+	"sourceSize": {"w":485,"h":247}
 }},
 "meta":{
 	"app": "Packrat Atlas Generator github.com/MattRix/Packrat",
 	"version": "1.0",
 	"image": "Assets/MovingCo/Resources/Atlases/GameAtlas.png",
 	"format": "RGBA8888",
-	"size": {"w":1024,"h":1024},
+	"size": {"w":4096,"h":4096},
 	"scale": "1"
 }
 }

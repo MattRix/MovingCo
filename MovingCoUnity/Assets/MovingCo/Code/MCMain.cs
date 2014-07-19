@@ -26,11 +26,12 @@ public class MCMain : MonoBehaviour
 		fparams.backgroundColor = RXUtils.GetColorFromHex(0x011020); //RXUtils.GetColorFromHex(0xEEEEEE); 
 		fparams.shouldLerpToNearestResolutionLevel = true;
 
-		fparams.resolutionLevelPickDimension = FResolutionLevelPickDimension.Shortest;
+		fparams.resolutionLevelPickDimension = FResolutionLevelPickDimension.Longest;
 		fparams.resolutionLevelPickMode = FResolutionLevelPickMode.Downwards;
 
-		fparams.AddResolutionLevel(1024.0f,		1.0f,	1.0f,	""); //iPhone
-		fparams.AddResolutionLevel(2048.0f,		2.0f,	1.0f,	""); //iPhone retina
+		fparams.AddResolutionLevel(512.0f,		0.5f,	2.0f,	""); //Sim iPad
+		fparams.AddResolutionLevel(1024.0f,		1.0f,	2.0f,	""); //iPad Normal
+		fparams.AddResolutionLevel(2048.0f,		2.0f,	2.0f,	""); //iPad Retina
 
 		fparams.origin = new Vector2(0.5f,0.5f);
 		

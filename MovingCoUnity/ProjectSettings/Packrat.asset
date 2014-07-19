@@ -15,7 +15,7 @@
 	"sourceFolderPath":"SourceImages/Game",
 	"atlasFilePath":"Assets/MovingCo/Resources/Atlases/GameAtlas",
 	"shouldGenerate":"True",
-	"shouldFoldout":"False",
+	"shouldFoldout":"True",
 	"shouldAutoGenerate":"False",
 	"shouldAddSubfolders":"True",
 	"shouldUseBytes":"True",
