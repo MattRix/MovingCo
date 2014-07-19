@@ -81,7 +81,6 @@ public class House : FContainer
 
 			if(dist > 700)
 			{
-				Debug.Log ("removing item!" + item);
 				item.RemoveFromWorld();
 				items.RemoveAt(i);
 				i--;
@@ -108,10 +107,17 @@ public class House : FContainer
 		cursor.Set(0,200);					AddItem(ItemMaker.Create_BBall(cursor));
 		cursor.Set(100,-50);				AddItem(ItemMaker.Create_BBall(cursor));
 
-		cursor.Set(200,-100);				AddItem(ItemMaker.Create_DrawerSmall(cursor));
-		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
-		cursor.Set(-100,50); 				AddItem(ItemMaker.Create_DrawerSmall(cursor));
-		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+		cursor.Set(300,-150);				AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+30); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+
+		cursor.Set(-100,60); 				AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+30); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+		cursor.Set(50,60); 				AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+30); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+		cursor.Set(200,60); 				AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+30); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+
+		cursor.Set(50,-100); 				AddItem(ItemMaker.Create_Couch(cursor));
 	}
 
 	public Item AddItem(Item item)

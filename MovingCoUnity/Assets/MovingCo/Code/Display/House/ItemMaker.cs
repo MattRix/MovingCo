@@ -9,6 +9,8 @@ public class ItemMaker : MonoBehaviour
 	{
 		var item = Item.Create("BBall",pos);
 
+		item.canBeDamaged = false;
+
 		item.AddSprite("BBall");
 		var coll = item.AddCircleCollider(22.0f,0.0f,0.0f);
 
@@ -42,11 +44,24 @@ public class ItemMaker : MonoBehaviour
 		var item = Item.Create("DeskLamp",pos);
 		
 		item.AddSprite("DeskLamp");
-		item.AddBoxCollider(new Rect(-15,-35,30,70),0);
+		item.AddBoxCollider(new Rect(-20,-35,40,70),0);
 		
 		item.StartDebug(0xFF0000);
 		
 		return item;
 	}
+
+	public static Item Create_Couch(Vector2 pos)
+	{
+		var item = Item.Create("Couch",pos);
+		
+		item.AddSprite("Couch");
+		item.AddBoxCollider(new Rect(-120,-50,240,110),0);
+		
+		item.StartDebug(0xFF0000);
+		
+		return item;
+	}
+
 }
 

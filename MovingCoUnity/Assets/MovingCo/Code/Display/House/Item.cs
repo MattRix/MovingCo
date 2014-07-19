@@ -7,6 +7,9 @@ public class Item : MonoBehaviour
 {
 	public FContainer holder;
 	public FPNodeLink link;
+	public bool canBeDamaged = true;
+	public float redness = 0.0f;
+	public FSprite sprite;
 	
 	public static Item Create(string name, Vector2 pos)
 	{
@@ -33,9 +36,39 @@ public class Item : MonoBehaviour
 		return item;
 	}
 
+	public void Update()
+	{
+		redness = Mathf.Max(0.0f,redness-0.01f);
+
+		if(sprite != null)
+		{
+			sprite.color = new Color(1.0f,1.0f-redness,1.0f-redness);
+		}
+	}
+
+	public void OnCollisionEnter (Collision colli) 
+	{
+		if(!canBeDamaged) return;
+
+		if(colli.relativeVelocity.magnitude > 3)
+		{
+			TakeDamage();
+		}
+	}
+
+	void TakeDamage ()
+	{
+		redness = 1.0f;
+
+		if(Core.instance.score > 0)
+		{
+			Core.instance.score -= 1;
+		}
+	}
+
 	public FSprite AddSprite(string name)
 	{
-		FSprite sprite = new FSprite("Items/"+name+"_front");
+		sprite = new FSprite("Items/"+name+"_front");
 		holder.AddChild(sprite);
 
 		return sprite;
