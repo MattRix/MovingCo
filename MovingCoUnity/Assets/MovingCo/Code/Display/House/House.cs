@@ -166,8 +166,8 @@ public class HouseWall : MonoBehaviour
 		var wall = go.AddComponent<HouseWall>();
 		wall.outline = outline;
 
-		wall.coll = go.AddComponent<BoxCollider>();
-		wall.coll.size = new Vector3(rect.width*FPhysics.POINTS_TO_METERS, rect.height*FPhysics.POINTS_TO_METERS,FPhysics.DEFAULT_Z_THICKNESS);
+		var coll = go.AddComponent<BoxCollider>();
+		coll.size = new Vector3(rect.width*FPhysics.POINTS_TO_METERS, rect.height*FPhysics.POINTS_TO_METERS,FPhysics.DEFAULT_Z_THICKNESS);
 		go.transform.localPosition = new Vector3(rect.center.x*FPhysics.POINTS_TO_METERS,rect.center.y*FPhysics.POINTS_TO_METERS,0);
 
 		FPDebugRenderer.Create(go,House.instance.debugHolder,0x0000FF,false);
