@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
 
 		if(House.instance != null)
 		{
-			House.instance.AddChild(item.holder);
+			House.instance.itemHolder.AddChild(item.holder);
 		}
 		
 		return item;
@@ -43,6 +43,11 @@ public class Item : MonoBehaviour
 	{
 		SphereCollider coll = gameObject.AddComponent<SphereCollider>();
 		coll.radius = radius * FPhysics.POINTS_TO_METERS;
+	}
+
+	public void StartDebug(uint color)
+	{
+		FPDebugRenderer.Create(gameObject,House.instance.debugHolder,color,false);
 	}
 }
 

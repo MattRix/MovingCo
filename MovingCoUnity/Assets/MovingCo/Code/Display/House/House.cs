@@ -14,16 +14,22 @@ public class House : FContainer
 
 	public FContainer itemHolder;
 
+	public FContainer debugHolder;
+
 	public House ()
 	{
 		instance = this;
 
 		AddChild(itemHolder = new FContainer());
 
+		debugHolder = new FContainer();
+
 		world = FPWorld.Create(80.0f);
 
 		houseOutline = HouseOutline.Create();
 		AddChild(houseOutline.holder);
+
+		AddChild(debugHolder);
 
 		CreateItems();
 	}

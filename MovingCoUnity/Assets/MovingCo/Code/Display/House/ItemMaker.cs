@@ -10,7 +10,9 @@ public class ItemMaker : MonoBehaviour
 		var item = Item.Create("BBall",pos);
 
 		item.AddSprite("BBall");
-		item.AddCircleCollider(40.0f,0.0f,0.0f);
+		item.AddCircleCollider(18.0f,0.0f,0.0f);
+
+		item.StartDebug(0xFF0000);
 		
 		return item;
 	}
