@@ -70,5 +70,11 @@ public class Item : MonoBehaviour
 	{
 		FPDebugRenderer.Create(gameObject,House.instance.debugHolder,color,false);
 	}
+
+	public void RemoveFromWorld ()
+	{
+		holder.RemoveFromContainer();
+		UnityEngine.Object.Destroy(gameObject);
+	}
 }
 

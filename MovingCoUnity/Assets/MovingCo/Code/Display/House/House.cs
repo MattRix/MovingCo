@@ -71,6 +71,20 @@ public class House : FContainer
 			}
 		}
 		#endif
+
+		for(int i = 0; i<items.Count; i++)
+		{
+			var item = items[i];
+			float dist = item.holder.GetPosition().magnitude;
+
+			if(dist > 700)
+			{
+				Debug.Log ("removing item!" + item);
+				item.RemoveFromWorld();
+				items.RemoveAt(i);
+				i--;
+			}
+		}
 	}
 
 	void CreateItems()
