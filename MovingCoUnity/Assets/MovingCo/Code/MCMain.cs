@@ -53,6 +53,16 @@ public class MCMain : MonoBehaviour
 		Futile.stage.AddChild(new Core());
 	}
 
+	public float force = 9.8f;
+	
+	void FixedUpdate ()
+	{
+		Vector2 dir = new Vector2(0,0);
+		dir.x = Input.acceleration.x;
+		dir.y = Input.acceleration.y;
+		Physics.gravity = dir * force;
+	}
+
 	void OnApplicationQuit()
 	{
 //		if(Core.instance != null)
