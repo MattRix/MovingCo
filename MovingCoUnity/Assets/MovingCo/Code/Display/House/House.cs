@@ -10,16 +10,29 @@ public class House : FContainer
 
 	public HouseOutline houseOutline;
 
+	public List<Item> items = new List<Item>();
+
+	public FContainer itemHolder;
+
 	public House ()
 	{
 		instance = this;
+
+		AddChild(itemHolder = new FContainer());
 
 		world = FPWorld.Create(80.0f);
 
 		houseOutline = HouseOutline.Create();
 		AddChild(houseOutline.holder);
 
+		CreateItems();
+	}
 
+	void CreateItems()
+	{
+		Vector2 cursor = new Vector2(0,0);
+
+		ItemMaker.Create_BBall(cursor);
 	}
 
 	public void Destroy ()
@@ -38,7 +51,7 @@ public class HouseOutline : MonoBehaviour
 
 	public static HouseOutline Create()
 	{
-		var go = new GameObject();
+		var go = new GameObject("HouseOutline");
 		go.transform.parent = House.world.transform;
 		var ho = go.AddComponent<HouseOutline>();
 

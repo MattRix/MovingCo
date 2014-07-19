@@ -48,7 +48,7 @@
 	"spriteSourceSize": {"x":15,"y":24,"w":86,"h":84},
 	"sourceSize": {"w":117,"h":127}
 },
-"Items/BBall_shadow":
+"Items/BBall_front":
 {
 	"frame": {"x":3113,"y":86,"w":101,"h":102},
 	"rotated": false,
@@ -56,9 +56,17 @@
 	"spriteSourceSize": {"x":7,"y":15,"w":101,"h":102},
 	"sourceSize": {"w":117,"h":127}
 },
+"Items/BBall_shadow":
+{
+	"frame": {"x":3113,"y":189,"w":101,"h":102},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":15,"w":101,"h":102},
+	"sourceSize": {"w":117,"h":127}
+},
 "Items/DrawerSmall_clean":
 {
-	"frame": {"x":3113,"y":189,"w":248,"h":199},
+	"frame": {"x":3215,"y":1,"w":248,"h":199},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":33,"y":29,"w":248,"h":199},
@@ -66,7 +74,7 @@
 },
 "Items/DrawerSmall_front":
 {
-	"frame": {"x":3362,"y":1,"w":266,"h":219},
+	"frame": {"x":3215,"y":201,"w":266,"h":219},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
@@ -74,7 +82,7 @@
 },
 "Items/DrawerSmall_shadow":
 {
-	"frame": {"x":3362,"y":221,"w":266,"h":219},
+	"frame": {"x":3482,"y":1,"w":266,"h":219},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
@@ -82,7 +90,7 @@
 },
 "UI/CloseButton":
 {
-	"frame": {"x":3629,"y":1,"w":213,"h":188},
+	"frame": {"x":3482,"y":221,"w":213,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":213,"h":188},
@@ -90,7 +98,7 @@
 },
 "UI/DollarSign":
 {
-	"frame": {"x":3843,"y":1,"w":154,"h":311},
+	"frame": {"x":3749,"y":1,"w":154,"h":311},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":0,"w":154,"h":311},
@@ -98,7 +106,7 @@
 },
 "UI/MenuButton":
 {
-	"frame": {"x":3629,"y":190,"w":191,"h":188},
+	"frame": {"x":3904,"y":1,"w":191,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":1,"w":191,"h":188},
