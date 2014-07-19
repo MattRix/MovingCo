@@ -27,6 +27,16 @@ public class Core : FContainer
 		Futile.instance.StartDelayedCallback(Start,0.1f);
 	}
 
+	public float force = 9.8f;
+	
+	void FixedUpdate ()
+	{
+		Vector2 dir = new Vector2(0,0);
+		dir.x = Input.acceleration.x;
+		dir.y = Input.acceleration.y;
+		Physics.gravity = dir * force;
+	}
+
 	void Start ()
 	{
 		//SetSection(new StartSection());

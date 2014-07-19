@@ -20,6 +20,8 @@ public class House : FContainer
 	public Vector2 firstPoint;
 	public bool hasFirstPoint = false;
 
+	public Vector3 currentAccel;
+
 	public House ()
 	{
 		instance = this;
@@ -45,6 +47,7 @@ public class House : FContainer
 
 	void HandleUpdate ()
 	{
+		#if UNITY_EDITOR
 		if(Input.GetMouseButtonDown(0))
 		{
 			Vector2 point = this.GetLocalMousePosition();
@@ -67,7 +70,7 @@ public class House : FContainer
 				hasFirstPoint = false;
 			}
 		}
-
+		#endif
 	}
 
 	void CreateItems()
