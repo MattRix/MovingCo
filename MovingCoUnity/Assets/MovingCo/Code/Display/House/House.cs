@@ -45,8 +45,6 @@ public class House : FContainer
 		CreateItems();
 
 		ListenForUpdate(HandleUpdate);
-
-		Core.instance.didWin = false;
 	}
 
 	void HandleUpdate ()
@@ -98,8 +96,9 @@ public class House : FContainer
 
 	void DoWin ()
 	{
+		hasWon = true;
 		Core.instance.didWin = true;
-		Core.instance.score = 0;
+		Core.instance.SetSection(new PostGameSection());
 	}
 
 	void CreateItems()
@@ -111,12 +110,8 @@ public class House : FContainer
 
 		cursor.Set(200,-100);				AddItem(ItemMaker.Create_DrawerSmall(cursor));
 		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
-		cursor.Set(-100,50); 					AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(-100,50); 				AddItem(ItemMaker.Create_DrawerSmall(cursor));
 		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
-
-
-
-
 	}
 
 	public Item AddItem(Item item)

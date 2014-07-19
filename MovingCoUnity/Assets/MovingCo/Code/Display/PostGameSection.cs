@@ -7,6 +7,7 @@ public class PostGameSection : Section
 {
 	public FLabel gameOverLabel;
 	public FButton playAgainButton;
+	public FLabel scoreLabel;
 	
 	public PostGameSection ()
 	{
@@ -29,6 +30,14 @@ public class PostGameSection : Section
 
 		playAgainButton.scale = 0.0f;
 		Go.to (playAgainButton, 0.4f, new TweenConfig().scaleXY(1.0f).setDelay(0.1f).backOut());
+
+		if(didWin)
+		{
+			AddChild(scoreLabel = new FLabel(Fonts.Hand,"$"+Core.instance.score));
+			scoreLabel.color = new Color(0.85f,1.0f,0.85f);
+			scoreLabel.y = gameOverLabel.y - 50.0f;
+			gameOverLabel.y += 50.0f;
+		}
 		
 		playAgainButton.SignalRelease += (FButton button) => {HandlePlayAgainTap();};
 	}
@@ -41,7 +50,7 @@ public class PostGameSection : Section
 	override public void BuildOut()
 	{
 		Go.to (gameOverLabel, 0.4f, new TweenConfig().scaleXY(0.0f).setDelay(0.1f).backIn().onComplete(HandleBuildOutComplete));
-
+		if(scoreLabel != null) Go.to (scoreLabel, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 		Go.to (playAgainButton, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 	}
 	
