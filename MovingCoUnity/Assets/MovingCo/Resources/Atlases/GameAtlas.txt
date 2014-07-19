@@ -40,9 +40,49 @@
 	"spriteSourceSize": {"x":7,"y":0,"w":1990,"h":642},
 	"sourceSize": {"w":2048,"h":1024}
 },
+"Items/BBall_clean":
+{
+	"frame": {"x":3113,"y":1,"w":86,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":24,"w":86,"h":84},
+	"sourceSize": {"w":117,"h":127}
+},
+"Items/BBall_shadow":
+{
+	"frame": {"x":3113,"y":86,"w":101,"h":102},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":15,"w":101,"h":102},
+	"sourceSize": {"w":117,"h":127}
+},
+"Items/DrawerSmall_clean":
+{
+	"frame": {"x":3113,"y":189,"w":248,"h":199},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":33,"y":29,"w":248,"h":199},
+	"sourceSize": {"w":302,"h":260}
+},
+"Items/DrawerSmall_front":
+{
+	"frame": {"x":3362,"y":1,"w":266,"h":219},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
+	"sourceSize": {"w":302,"h":260}
+},
+"Items/DrawerSmall_shadow":
+{
+	"frame": {"x":3362,"y":221,"w":266,"h":219},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
+	"sourceSize": {"w":302,"h":260}
+},
 "UI/CloseButton":
 {
-	"frame": {"x":3113,"y":1,"w":213,"h":188},
+	"frame": {"x":3629,"y":1,"w":213,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":213,"h":188},
@@ -50,7 +90,7 @@
 },
 "UI/DollarSign":
 {
-	"frame": {"x":3327,"y":1,"w":154,"h":311},
+	"frame": {"x":3843,"y":1,"w":154,"h":311},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":0,"w":154,"h":311},
@@ -58,7 +98,7 @@
 },
 "UI/MenuButton":
 {
-	"frame": {"x":3113,"y":190,"w":191,"h":188},
+	"frame": {"x":3629,"y":190,"w":191,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":1,"w":191,"h":188},
@@ -66,7 +106,7 @@
 },
 "UI/PlayAgainButton":
 {
-	"frame": {"x":3482,"y":1,"w":436,"h":243},
+	"frame": {"x":2091,"y":1134,"w":436,"h":243},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":436,"h":243},
@@ -74,7 +114,7 @@
 },
 "UI/RestartButton":
 {
-	"frame": {"x":3482,"y":245,"w":199,"h":196},
+	"frame": {"x":2528,"y":1134,"w":199,"h":196},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":1,"w":199,"h":196},
@@ -82,7 +122,7 @@
 },
 "UI/StartButton":
 {
-	"frame": {"x":2091,"y":1134,"w":483,"h":244},
+	"frame": {"x":2728,"y":1134,"w":483,"h":244},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":1,"w":483,"h":244},
