@@ -1,0 +1,25 @@
+{"links":[
+
+{
+	"sourceFolderPath":"SourceImages/Background",
+	"atlasFilePath":"Assets/MovingCo/Resources/Atlases/BackgroundAtlas",
+	"shouldGenerate":"False",
+	"shouldFoldout":"False",
+	"shouldAutoGenerate":"False",
+	"shouldAddSubfolders":"True",
+	"shouldUseBytes":"True",
+	"scale":"1"	"shouldTrim":"True"	"padding":"1"	"extrude":"0"	"trimPadding":"1"
+},
+
+{
+	"sourceFolderPath":"SourceImages/Game",
+	"atlasFilePath":"Assets/MovingCo/Resources/Atlases/GameAtlas",
+	"shouldGenerate":"True",
+	"shouldFoldout":"False",
+	"shouldAutoGenerate":"False",
+	"shouldAddSubfolders":"True",
+	"shouldUseBytes":"True",
+	"scale":"1"	"shouldTrim":"True"	"padding":"1"	"extrude":"0"	"trimPadding":"1"
+}
+
+]}
