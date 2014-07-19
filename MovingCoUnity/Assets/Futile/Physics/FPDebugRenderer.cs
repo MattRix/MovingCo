@@ -5,7 +5,7 @@ using System;
 
 public class FPDebugRenderer : MonoBehaviour
 {
-	public static bool IS_ENABLED = false;
+	public static bool IS_ENABLED = true;
 	
 	public static FPDebugRenderer Create(GameObject targetGameObject, FContainer container, uint color, bool shouldUpdateColliders)
 	{

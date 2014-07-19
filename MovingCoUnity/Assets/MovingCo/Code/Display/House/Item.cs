@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
 	{
 		FSprite sprite = new FSprite("Items/"+name+"_front");
 		holder.AddChild(sprite);
+
 		return sprite;
 	}
 

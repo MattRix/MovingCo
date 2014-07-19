@@ -13,6 +13,7 @@ public class House : FContainer
 	public List<Item> items = new List<Item>();
 
 	public FContainer itemHolder;
+	public FContainer itemShadowHolder;
 
 	public FContainer debugHolder;
 
@@ -23,7 +24,10 @@ public class House : FContainer
 	{
 		instance = this;
 
+		AddChild(itemShadowHolder = new FContainer());
 		AddChild(itemHolder = new FContainer());
+
+		itemShadowHolder.y -= 5.0f;
 
 		debugHolder = new FContainer();
 
@@ -113,7 +117,8 @@ public class HouseOutline : MonoBehaviour
 
 	void CreateWalls()
 	{
-		AddWall(new Rect(-400,-305,1000,25),3.0f);
+		AddWall(new Rect(-600,-340,1200,50),1.0f);//ground below house
+		AddWall(new Rect(-400,-305,800,25),3.0f);//floor of house
 
 		//stairs
 		AddWall(new Rect(-401,-306,260,38),0);
@@ -126,9 +131,14 @@ public class HouseOutline : MonoBehaviour
 		AddWall(new Rect(-404,-81+5,50,36),0);
 
 		AddWall(new Rect(-405,-48,18,262),0); //left wall
-		AddWall(new Rect(-403,210,764,28),0); //ceiling
+		AddWall(new Rect(-403,210+5,764,28),0); //ceiling
 		AddWall(new Rect(353,-22,14,258),0); //top right wall
 		AddWall(new Rect(-161,-40,530,24),1); //top floor
+
+		//roof
+		AddWall(new Rect(-475,208+5,908,30),0);
+		AddWall(new Rect(-447,236,838,42),0);
+		AddWall(new Rect(-401,280,756,36),0);
 	}
 
 	HouseWall AddWall (Rect rect, float angle)
