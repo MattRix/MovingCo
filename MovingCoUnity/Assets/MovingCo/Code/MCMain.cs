@@ -8,6 +8,8 @@ using System.Collections.Generic;
 public class MCMain : MonoBehaviour
 {	
 	static public MCMain instance = null;
+
+	static public bool useAccel = false;
 	
 	private void Start()
 	{
@@ -49,6 +51,10 @@ public class MCMain : MonoBehaviour
 		FAtlas backgroundAtlas = Futile.atlasManager.LoadAtlas("Atlases/BackgroundAtlas");
 
 		Fonts.Load();
+
+		#if !UNITY_EDITOR && UNITY_IPHONE
+		useAccel = true;
+		#endif
 		
 		Futile.stage.AddChild(new Core());
 	}
@@ -57,11 +63,18 @@ public class MCMain : MonoBehaviour
 	
 	void FixedUpdate ()
 	{
-		Vector2 dir = new Vector2(0,0);
-		dir.x = Input.acceleration.x;
-		dir.y = Input.acceleration.y;
-
-		//Physics.gravity = dir * force;
+		if(useAccel)
+		{
+			Vector2 dir = new Vector2(0,0);
+			dir.x = Input.acceleration.x;
+			dir.y = Input.acceleration.y;
+			
+			Physics.gravity = dir * force;
+		}
+		else 
+		{
+			Physics.gravity = new Vector3(0,-9.8f,0);
+		}
 	}
 
 	void OnApplicationQuit()

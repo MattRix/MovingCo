@@ -19,14 +19,12 @@ public class MCWindow : EditorWindow
 	
 	public void OnGUI()
 	{
+		if(House.instance == null) return;
 		EditorGUILayout.BeginHorizontal();
-//		if(GUILayout.Button("Toggle Hat Tool"))
-//		{
-//			if(Core.instance != null)
-//			{
-//				HatTool.Show();
-//			}
-//		}
+
+		House.instance.debugHolder.isVisible = GUILayout.Toggle(House.instance.debugHolder.isVisible,"Debug Phys");
+		MCMain.useAccel = GUILayout.Toggle(MCMain.useAccel,"Use Accel");
+
 		EditorGUILayout.EndHorizontal();
 		
 	} 

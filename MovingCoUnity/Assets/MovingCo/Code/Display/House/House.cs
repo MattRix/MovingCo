@@ -78,6 +78,8 @@ public class House : FContainer
 		Vector2 cursor = new Vector2(0,50);
 
 		AddItem(ItemMaker.Create_BBall(cursor));
+
+		AddItem(ItemMaker.Create_DrawerSmall(new Vector2(-50,-100)));
 	}
 
 	public Item AddItem(Item item)

@@ -24,5 +24,17 @@ public class ItemMaker : MonoBehaviour
 		
 		return item;
 	}
+
+	public static Item Create_DrawerSmall(Vector2 pos)
+	{
+		var item = Item.Create("DrawerSmall",pos);
+		
+		item.AddSprite("DrawerSmall");
+		var coll = item.AddBoxCollider(new Rect(-47,-49,100,94),0);
+		
+		item.StartDebug(0xFF0000);
+		
+		return item;
+	}
 }
 
