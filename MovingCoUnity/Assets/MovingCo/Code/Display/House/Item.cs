@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
 		item.link.Init (item.holder,true);
 
 		var rb = go.AddComponent<Rigidbody>();
+		rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 
 		if(House.instance != null)
 		{
@@ -39,10 +40,11 @@ public class Item : MonoBehaviour
 		return sprite;
 	}
 
-	public void AddCircleCollider(float radius, float offsetX, float offsetY)
+	public SphereCollider AddCircleCollider(float radius, float offsetX, float offsetY)
 	{
 		SphereCollider coll = gameObject.AddComponent<SphereCollider>();
 		coll.radius = radius * FPhysics.POINTS_TO_METERS;
+		return coll;
 	}
 
 	public void StartDebug(uint color)

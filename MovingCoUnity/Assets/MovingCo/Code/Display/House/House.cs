@@ -16,6 +16,9 @@ public class House : FContainer
 
 	public FContainer debugHolder;
 
+	public Vector2 firstPoint;
+	public bool hasFirstPoint = false;
+
 	public House ()
 	{
 		instance = this;
@@ -32,11 +35,40 @@ public class House : FContainer
 		AddChild(debugHolder);
 
 		CreateItems();
+
+		ListenForUpdate(HandleUpdate);
+	}
+
+	void HandleUpdate ()
+	{
+		if(Input.GetMouseButtonDown(0))
+		{
+			Vector2 point = this.GetLocalMousePosition();
+			if(!hasFirstPoint)
+			{
+				firstPoint = point;
+				hasFirstPoint = true;
+			}
+			else 
+			{
+				Rect rect = new Rect(firstPoint.x, firstPoint.y, point.x-firstPoint.x, point.y-firstPoint.y);
+				string message = "";
+				message += rect.x.ToString("#") + ",";
+				message += rect.y.ToString("#")+ ",";
+				message += rect.width.ToString("#")+ ",";
+				message += rect.height.ToString("#")+ "";
+				message = "AddWall(new Rect("+message+"),0);\n";
+				MagicWriter.Append(message);
+				MagicWriter.Write();
+				hasFirstPoint = false;
+			}
+		}
+
 	}
 
 	void CreateItems()
 	{
-		Vector2 cursor = new Vector2(0,0);
+		Vector2 cursor = new Vector2(0,50);
 
 		AddItem(ItemMaker.Create_BBall(cursor));
 	}
@@ -79,26 +111,60 @@ public class HouseOutline : MonoBehaviour
 		return ho;
 	}
 
-	void CreateWalls ()
+	void CreateWalls()
 	{
+		AddWall(new Rect(-400,-305,1000,25),3.0f);
 
+		//stairs
+		AddWall(new Rect(-401,-306,260,38),0);
+		AddWall(new Rect(-405,-275,236,38),0);
+		AddWall(new Rect(-405,-237,206,36),0);
+		AddWall(new Rect(-406,-223,178,58),0);
+		AddWall(new Rect(-412,-191+5,156,54),0);
+		AddWall(new Rect(-410,-153+5,122,52),0);
+		AddWall(new Rect(-406,-117+5,86,44),0);
+		AddWall(new Rect(-404,-81+5,50,36),0);
+
+		AddWall(new Rect(-405,-48,18,262),0); //left wall
+		AddWall(new Rect(-403,210,764,28),0); //ceiling
+		AddWall(new Rect(353,-22,14,258),0); //top right wall
+		AddWall(new Rect(-161,-40,530,24),1); //top floor
+	}
+
+	HouseWall AddWall (Rect rect, float angle)
+	{
+		var wall = HouseWall.Create(this,rect, angle);
+		walls.Add(wall);
+		return wall;
 	}
 }
 
-public class HouseWall
+public class HouseWall : MonoBehaviour
 {
 	public HouseOutline outline;
+	public BoxCollider coll;
 
-	public static HouseWall Create(HouseOutline outline, Rect rect)
+	public static HouseWall Create(HouseOutline outline, Rect rect, float angle)
 	{
 		var go = new GameObject("HouseWall");
-		go.transform.parent = House.world.transform;
-		var wall = go.AddComponent<HouseOutline>();
+		go.transform.parent = outline.transform;
+		go.transform.localEulerAngles = new Vector3(0,0,angle);
 
+		var wall = go.AddComponent<HouseWall>();
 		wall.outline = outline;
-		
 
-		
+		wall.coll = go.AddComponent<BoxCollider>();
+		wall.coll.size = new Vector3(rect.width*FPhysics.POINTS_TO_METERS, rect.height*FPhysics.POINTS_TO_METERS,FPhysics.DEFAULT_Z_THICKNESS);
+		go.transform.localPosition = new Vector3(rect.center.x*FPhysics.POINTS_TO_METERS,rect.center.y*FPhysics.POINTS_TO_METERS,0);
+
+		FPDebugRenderer.Create(go,House.instance.debugHolder,0x0000FF,false);
+
+//		PhysicMaterial mat = new PhysicMaterial();
+//		mat.bounciness = 0.5f;
+//		mat.dynamicFriction = 0.5f;
+//		mat.staticFriction = 0.5f;
+//		wall.coll.material = mat;
+
 		return wall;
 	}
 }

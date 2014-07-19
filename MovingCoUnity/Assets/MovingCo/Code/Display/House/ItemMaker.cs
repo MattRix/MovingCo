@@ -10,9 +10,17 @@ public class ItemMaker : MonoBehaviour
 		var item = Item.Create("BBall",pos);
 
 		item.AddSprite("BBall");
-		item.AddCircleCollider(18.0f,0.0f,0.0f);
+		var coll = item.AddCircleCollider(22.0f,0.0f,0.0f);
 
 		item.StartDebug(0xFF0000);
+
+		PhysicMaterial mat = new PhysicMaterial();
+		mat.bounciness = 0.8f;
+		mat.dynamicFriction = 0.5f;
+		mat.staticFriction = 0.5f;
+		mat.frictionCombine = PhysicMaterialCombine.Maximum;
+		mat.bounceCombine = PhysicMaterialCombine.Maximum;
+		coll.material = mat;
 		
 		return item;
 	}
