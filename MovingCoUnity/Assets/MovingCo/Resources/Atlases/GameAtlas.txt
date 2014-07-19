@@ -64,57 +64,65 @@
 	"spriteSourceSize": {"x":7,"y":0,"w":1990,"h":642},
 	"sourceSize": {"w":2048,"h":1024}
 },
-"Items/BBall_clean":
-{
-	"frame": {"x":2091,"y":130,"w":86,"h":84},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":15,"y":24,"w":86,"h":84},
-	"sourceSize": {"w":117,"h":127}
-},
 "Items/BBall_front":
 {
-	"frame": {"x":2091,"y":215,"w":101,"h":102},
+	"frame": {"x":2091,"y":130,"w":101,"h":102},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":15,"w":101,"h":102},
 	"sourceSize": {"w":117,"h":127}
 },
-"Items/BBall_shadow":
+"Items/BedFrame_front":
 {
-	"frame": {"x":2091,"y":318,"w":101,"h":102},
+	"frame": {"x":3500,"y":1,"w":502,"h":335},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":7,"y":15,"w":101,"h":102},
-	"sourceSize": {"w":117,"h":127}
+	"spriteSourceSize": {"x":20,"y":10,"w":502,"h":335},
+	"sourceSize": {"w":545,"h":361}
 },
-"Items/DrawerSmall_clean":
+"Items/CouchCushion_front":
 {
-	"frame": {"x":2193,"y":130,"w":248,"h":199},
+	"frame": {"x":2193,"y":130,"w":235,"h":71},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":33,"y":29,"w":248,"h":199},
-	"sourceSize": {"w":302,"h":260}
+	"spriteSourceSize": {"x":15,"y":6,"w":235,"h":71},
+	"sourceSize": {"w":261,"h":89}
+},
+"Items/Couch_front":
+{
+	"frame": {"x":2091,"y":1134,"w":559,"h":268},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":22,"w":559,"h":268},
+	"sourceSize": {"w":589,"h":304}
+},
+"Items/DeskLamp_front":
+{
+	"frame": {"x":3500,"y":337,"w":118,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":11,"w":118,"h":149},
+	"sourceSize": {"w":136,"h":170}
 },
 "Items/DrawerSmall_front":
 {
-	"frame": {"x":3500,"y":1,"w":266,"h":219},
+	"frame": {"x":2193,"y":202,"w":266,"h":219},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
 	"sourceSize": {"w":302,"h":260}
 },
-"Items/DrawerSmall_shadow":
+"Items/Mattress_front":
 {
-	"frame": {"x":3500,"y":221,"w":266,"h":219},
+	"frame": {"x":3619,"y":337,"w":432,"h":105},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":24,"y":19,"w":266,"h":219},
-	"sourceSize": {"w":302,"h":260}
+	"spriteSourceSize": {"x":13,"y":9,"w":432,"h":105},
+	"sourceSize": {"w":458,"h":121}
 },
 "UI/CloseButton":
 {
-	"frame": {"x":3767,"y":1,"w":213,"h":188},
+	"frame": {"x":2651,"y":1134,"w":213,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":213,"h":188},
@@ -122,7 +130,7 @@
 },
 "UI/DollarSign":
 {
-	"frame": {"x":2091,"y":1134,"w":154,"h":311},
+	"frame": {"x":2865,"y":1134,"w":154,"h":311},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":0,"w":154,"h":311},
@@ -130,7 +138,7 @@
 },
 "UI/MenuButton":
 {
-	"frame": {"x":3767,"y":190,"w":191,"h":188},
+	"frame": {"x":2651,"y":1323,"w":191,"h":188},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":6,"y":1,"w":191,"h":188},
@@ -138,7 +146,7 @@
 },
 "UI/PlayAgainButton":
 {
-	"frame": {"x":2246,"y":1134,"w":436,"h":243},
+	"frame": {"x":2091,"y":1403,"w":436,"h":243},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":436,"h":243},
@@ -146,7 +154,7 @@
 },
 "UI/RestartButton":
 {
-	"frame": {"x":2683,"y":1134,"w":199,"h":196},
+	"frame": {"x":3020,"y":1134,"w":199,"h":196},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":1,"w":199,"h":196},
@@ -154,7 +162,7 @@
 },
 "UI/StartButton":
 {
-	"frame": {"x":2883,"y":1134,"w":483,"h":244},
+	"frame": {"x":3220,"y":1134,"w":483,"h":244},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":1,"w":483,"h":244},

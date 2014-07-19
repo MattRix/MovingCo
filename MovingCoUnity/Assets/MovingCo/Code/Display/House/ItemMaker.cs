@@ -30,7 +30,19 @@ public class ItemMaker : MonoBehaviour
 		var item = Item.Create("DrawerSmall",pos);
 		
 		item.AddSprite("DrawerSmall");
-		var coll = item.AddBoxCollider(new Rect(-47,-49,100,94),0);
+		item.AddBoxCollider(new Rect(-47,-49,100,94),0);
+		
+		item.StartDebug(0xFF0000);
+		
+		return item;
+	}
+
+	public static Item Create_DeskLamp(Vector2 pos)
+	{
+		var item = Item.Create("DeskLamp",pos);
+		
+		item.AddSprite("DeskLamp");
+		item.AddBoxCollider(new Rect(-15,-35,30,70),0);
 		
 		item.StartDebug(0xFF0000);
 		

@@ -104,11 +104,19 @@ public class House : FContainer
 
 	void CreateItems()
 	{
-		Vector2 cursor = new Vector2(0,50);
+		Vector2 cursor = new Vector2(0,0);
 
-		AddItem(ItemMaker.Create_BBall(cursor));
+		cursor.Set(0,200);					AddItem(ItemMaker.Create_BBall(cursor));
+		cursor.Set(100,-50);				AddItem(ItemMaker.Create_BBall(cursor));
 
-		AddItem(ItemMaker.Create_DrawerSmall(new Vector2(-50,-100)));
+		cursor.Set(200,-100);				AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+		cursor.Set(-100,50); 					AddItem(ItemMaker.Create_DrawerSmall(cursor));
+		cursor.Set(cursor.x,cursor.y+50); 	AddItem(ItemMaker.Create_DeskLamp(cursor));
+
+
+
+
 	}
 
 	public Item AddItem(Item item)
