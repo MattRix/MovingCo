@@ -27,6 +27,7 @@ public class GameSection : Section
 		Go.to (closeButton, 0.4f, new TweenConfig().scaleXY(1.0f).setDelay(0.1f).backOut());
 
 		house = new House();
+		house.SetPosition(25.0f,-12.0f);
 		AddChild(house);
 
 		house.scale = 0.0f;
