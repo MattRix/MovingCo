@@ -38,7 +38,13 @@ public class House : FContainer
 	{
 		Vector2 cursor = new Vector2(0,0);
 
-		ItemMaker.Create_BBall(cursor);
+		AddItem(ItemMaker.Create_BBall(cursor));
+	}
+
+	public Item AddItem(Item item)
+	{
+		items.Add(item);
+		return item;
 	}
 
 	public void Destroy ()
@@ -54,6 +60,7 @@ public class HouseOutline : MonoBehaviour
 {
 	public FContainer holder;
 	public FPNodeLink link;
+	public List<HouseWall> walls = new List<HouseWall>();
 
 	public static HouseOutline Create()
 	{
@@ -67,7 +74,32 @@ public class HouseOutline : MonoBehaviour
 		ho.link = go.AddComponent<FPNodeLink>();
 		ho.link.Init (ho.holder,false);
 
+		ho.CreateWalls();
+
 		return ho;
+	}
+
+	void CreateWalls ()
+	{
+
+	}
+}
+
+public class HouseWall
+{
+	public HouseOutline outline;
+
+	public static HouseWall Create(HouseOutline outline, Rect rect)
+	{
+		var go = new GameObject("HouseWall");
+		go.transform.parent = House.world.transform;
+		var wall = go.AddComponent<HouseOutline>();
+
+		wall.outline = outline;
+		
+
+		
+		return wall;
 	}
 }
 
