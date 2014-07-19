@@ -8,7 +8,7 @@ public class StartSection : Section
 	public FContainer truckHolder;
 	public FSprite truck;
 	public FSprite truckSign;
-	public FButton startButton;
+	public FButton playAgainButton;
 
 	public StartSection ()
 	{
@@ -24,9 +24,10 @@ public class StartSection : Section
 		truckHolder.AddChild(truckSign = new FSprite("TruckSign"));
 		truckSign.SetPosition(-170f,40f);	
 
-		startButton = new FButton("UI/StartButton","UI/StartButton");
-		startButton.y = -Futile.screen.halfHeight + 100.0f;
-		AddChild(startButton);
+		playAgainButton = new FButton("UI/StartButton","UI/StartButton");
+		playAgainButton.SetColors(new Color(0.9f,0.9f,0.9f),Color.white);
+		playAgainButton.y = -Futile.screen.halfHeight + 100.0f;
+		AddChild(playAgainButton);
 
 		truckHolder.scale = 0.0f;
 		Go.to (truckHolder, 0.4f, new TweenConfig().scaleXY(1.0f).backOut());
@@ -34,14 +35,13 @@ public class StartSection : Section
 		truckSign.scale = 0.0f;
 		Go.to (truckSign, 0.4f, new TweenConfig().scaleXY(1.0f).setDelay(0.1f).backOut());
 
-		startButton.scale = 0.0f;
-		Go.to (startButton, 0.4f, new TweenConfig().scaleXY(1.0f).backOut());
-		startButton.SetColors(new Color(0.9f,0.9f,0.9f),Color.white);
+		playAgainButton.scale = 0.0f;
+		Go.to (playAgainButton, 0.4f, new TweenConfig().scaleXY(1.0f).backOut());
 
-		startButton.SignalRelease += (FButton button) => {HandleStartTap();};
+		playAgainButton.SignalRelease += (FButton button) => {HandlePlayAgainTap();};
 	}
 
-	void HandleStartTap ()
+	void HandlePlayAgainTap ()
 	{
 		Core.instance.SetSection(new GameSection());
 	}
@@ -52,13 +52,13 @@ public class StartSection : Section
 		
 		Go.to (truckSign, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 		
-		Go.to (startButton, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
+		Go.to (playAgainButton, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 	}
 
 	void HandleBuildOutComplete (AbstractTween t)
 	{
-		Core.instance.StartCurrentSection();
 		this.RemoveFromContainer();
+		Core.instance.StartCurrentSection();
 	}
 }
 
