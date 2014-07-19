@@ -5,13 +5,16 @@ using System.Collections.Generic;
 
 public class GameSection : Section
 {
+	public static GameSection instance; 
+
 	public FButton closeButton;
 	public House house;
 	public FLabel scoreLabel;
+	public float redness = 0.0f;
 
 	public GameSection ()
 	{
-
+		instance = this;
 	}
 	
 	override public void Start()
@@ -60,6 +63,10 @@ public class GameSection : Section
 			}
 		}
 
+		redness = Mathf.Max(0.0f,redness-0.01f);
+
+		scoreLabel.color = Color.Lerp(new Color(0.85f,1.0f,0.85f), Color.red, redness);
+
 		scoreLabel.text = "$"+score;
 		Core.instance.score = score;
 	}
@@ -71,6 +78,7 @@ public class GameSection : Section
 	
 	override public void BuildOut()
 	{
+		instance = null;
 		Go.to (scoreLabel, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 		Go.to (closeButton, 0.4f, new TweenConfig().scaleXY(0.0f).backIn());
 		Go.to (house, 0.4f, new TweenConfig().scaleXY(0.0f).setDelay(0.1f).backIn().onComplete(HandleBuildOutComplete));

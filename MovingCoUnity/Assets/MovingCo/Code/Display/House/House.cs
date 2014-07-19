@@ -41,6 +41,7 @@ public class House : FContainer
 		AddChild(houseOutline.holder);
 
 		AddChild(debugHolder);
+		debugHolder.isVisible = false;
 
 		CreateItems();
 

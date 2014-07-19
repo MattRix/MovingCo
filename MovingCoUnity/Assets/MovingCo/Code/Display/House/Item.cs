@@ -42,7 +42,7 @@ public class Item : MonoBehaviour
 
 		if(sprite != null)
 		{
-			sprite.color = new Color(1.0f,1.0f-redness,1.0f-redness);
+			sprite.color = Color.Lerp(Color.white, Color.red, redness);
 		}
 	}
 
@@ -52,18 +52,20 @@ public class Item : MonoBehaviour
 
 		if(colli.relativeVelocity.magnitude > 3)
 		{
-			TakeDamage();
+			TakeDamage(Mathf.CeilToInt(colli.relativeVelocity.magnitude)-2);
 		}
 	}
 
-	void TakeDamage ()
+	void TakeDamage (int amount)
 	{
 		redness = 1.0f;
 
-		if(Core.instance.score > 0)
+		if(GameSection.instance != null)
 		{
-			Core.instance.score -= 1;
+			GameSection.instance.redness = 1.0f;
 		}
+
+		Core.instance.score = Mathf.Max (0,Core.instance.score-amount);
 	}
 
 	public FSprite AddSprite(string name)

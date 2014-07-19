@@ -32,8 +32,8 @@ public class Core : FContainer
 
 	void Start ()
 	{
-		//SetSection(new StartSection());
-		SetSection(new GameSection());
+		SetSection(new StartSection());
+		//SetSection(new GameSection());
 		StartCurrentSection();
 	}
 

@@ -59,7 +59,7 @@ public class MCMain : MonoBehaviour
 		Futile.stage.AddChild(new Core());
 	}
 
-	public float force = 9.8f;
+	public float force = 9.8f*2;
 	
 	void FixedUpdate ()
 	{
@@ -73,7 +73,7 @@ public class MCMain : MonoBehaviour
 		}
 		else 
 		{
-			Physics.gravity = new Vector3(0,-9.8f,0);
+			Physics.gravity = new Vector3(0,-force,0);
 		}
 	}
 
